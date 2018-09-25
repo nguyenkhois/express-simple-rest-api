@@ -109,7 +109,7 @@ app.use(cors()); // Using CORS
 app.use('/product', productRouter);
 app.use(express.static(__dirname + serverConfig.rootDir));
 app.use(function (req, res, next) { // Handle responsed headers
-    res.set(defaultHeaders);
+    res.set(header.defaultHeader);
     next();
 });
 
