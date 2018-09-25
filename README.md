@@ -14,7 +14,7 @@ Supported:
 
 ## Using
 * Run `npm i` to install all nedded dependencies.
-* Run the command `node index.js` to start your local API server at `http://localhost:8000`.
+* Run the command `npm start` or `node index.js` to start your local API server at `http://localhost:8000`.
 
 |Fetch URL|Method|Notes|
 |---|---|---|
