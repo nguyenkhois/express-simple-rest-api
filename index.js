@@ -21,86 +21,75 @@ function lookupProduct(req, res, next){
     const findItemIndex = productList.findIndex(item => item.id === productId);
     if (findItemIndex >= 0){
         result = [...result, productList[findItemIndex]];
-        res.statusCode = 200;
+        res.status(200);
     } else {
-        res.statusCode = 404;
+        res.status(404);
     }
     
-    res.set(header.getHeader);
-    return res.json(result)
+    return res.set(header.getHeader)
+                .json(result)
 }
 
 // Router
 const productRouter = express.Router();
 productRouter.use(express.json()); // Using for POST - Getting body.data
-productRouter.get('/', function(req, res){ 
-    res.set(header.getHeader);
-    res.statusCode = 200;
-    res.json(productList)
+
+productRouter.get('/', (req, res) => { 
+    res.set(header.getHeader)
+        .status(200)
+        .json(productList)
 });
-productRouter.get('/:id', lookupProduct, function(req, res){ });
+productRouter.get('/:id', lookupProduct, (req, res) => { });
 productRouter.post('/', (req, res) => {
+    let result = {};
     const findItemIndex = productList.findIndex(item => item.id === req.body.id);
     if (findItemIndex === -1){
-        res.statusCode = 201;
+        res.status(201);
+        result = Object.assign({}, {...req.body, status: 'added'});
     } else {
-        res.statusCode = 400;
+        res.status(400);
     }
 
-    res.set(header.changeDataHeader);
-
-    // Return result
-    if (res.statusCode === 201){
-        return res.json(req.body)
-    } else {
-        return res.json({})
-    }
+    res.set(header.changeDataHeader)
+        .json(result);
 });
 productRouter.put('/', (req, res) => {
     const productId = parseInt(req.body.id) || 0;
+    let result = {};
     if (productId > 0) {
         const findItemIndex = productList.findIndex(item => item.id === productId);
         if (findItemIndex !== -1){
-            res.statusCode = 200; // Updated successfull
+            res.status(200); // Updated successfull
+            result = Object.assign({}, {...req.body, status: 'modified'});
         } else {
-            res.statusCode = 400; // Bad request
+            res.status(400); // Bad request
         }
     } else {
-        res.statusCode = 400; // Bad request
+        res.status(400);
     }
 
-    res.set(header.changeDataHeader);
-
-    // Return result
-    if (res.statusCode === 200){
-        return res.json(req.body)
-    } else {
-        return res.json({})
-    }
+    res.set(header.changeDataHeader)
+        .json(result);
 });
 productRouter.delete('/:id', (req, res) => {
     const productId = parseInt(req.params.id) || 0;
+    let result = {};
     let findItemIndex = -1;
 
     if (productId > 0) {
         findItemIndex = productList.findIndex(item => item.id === productId);
         if (findItemIndex !== -1){
-            res.statusCode = 200; // Deleted successfull
+            res.status(200); // Deleted successfull
+            result = Object.assign({}, {...productList[findItemIndex], status: 'deleted'});
         } else {
-            res.statusCode = 400; // Bad request
+            res.status(400); // Bad request
         }
     } else {
-        res.statusCode = 400; // Bad request
+        res.status(400); // Bad request
     }
 
-    res.set(header.changeDataHeader);
-
-    // Return result
-    if (res.statusCode === 200){
-        return res.json(productList[findItemIndex])
-    } else {
-        return res.json({})
-    }
+    res.set(header.changeDataHeader)
+        .json(result);
 });
 
 // -------------- App --------------------------
