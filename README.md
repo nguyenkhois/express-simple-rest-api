@@ -11,3 +11,8 @@ Supported:
 * POST
 * PUT
 * DELETE
+
+## Using
+* Run `npm i` to install all nedded dependencies.
+* Run the command `node index.js` to start your local API server at `http://localhost:8000`.
+* Using web browser to view data structure at `http://localhost:8000/product`
