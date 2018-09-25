@@ -1,5 +1,5 @@
 # expressjs-simple-rest-api
-The simple REST API is based on Express.js
+The simple REST API is based on Express.js. Using [Insomnia](https://insomnia.rest/) for your test.
 
 |Main dependencies|Versions|
 |---|---|
