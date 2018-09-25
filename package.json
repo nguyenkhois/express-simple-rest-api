@@ -1,0 +1,19 @@
+{
+  "name": "simple-rest-api",
+  "version": "1.0.0",
+  "description": "The simple REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "Hello REST API"
+  },
+  "keywords": [
+    "REST",
+    "API"
+  ],
+  "author": "Khoi Le",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3"
+  }
+}
