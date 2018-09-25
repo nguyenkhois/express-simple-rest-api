@@ -1,61 +1,61 @@
 const productList = [
     {
         id: 1,
-        name: 'Korv bröd',
+        name: 'Apple',
         price: '12.90',
         inStock: 10
     },
     {
         id: 2,
-        name: 'Spageti',
-        price: '59.50',
+        name: 'Banana',
+        price: '9.50',
         inStock: 98
     },
     {
         id: 3,
-        name: 'Potatis',
+        name: 'Potato',
         price: '2.60',
         inStock: 85
     },
     {
         id: 4,
-        name: 'Tomat',
+        name: 'Tomato',
         price: '22.30',
         inStock: 59
     },
     {
         id: 5,
-        name: 'Mjölk',
+        name: 'Cherry',
         price: '10.60',
         inStock: 470
     },
     {
         id: 6,
-        name: 'Smör',
-        price: '43.70',
+        name: 'Milk',
+        price: '3.70',
         inStock: 29
     },
     {
         id: 7,
-        name: 'Smörgåstårta',
-        price: '278.70',
+        name: 'Cookie',
+        price: '28.70',
         inStock: 23
     },
     {
         id: 8,
-        name: 'Lax',
-        price: '125.90',
+        name: 'Orange',
+        price: '12.90',
         inStock: 208
     },
     {
         id: 9,
-        name: 'Köttbullar',
+        name: 'Moon cake',
         price: '46.90',
         inStock: 68
     },
     {
         id: 10,
-        name: 'Kanelbullar',
+        name: 'Coco',
         price: '6.90',
         inStock: 57
     }

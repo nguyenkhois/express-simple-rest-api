@@ -15,4 +15,14 @@ Supported:
 ## Using
 * Run `npm i` to install all nedded dependencies.
 * Run the command `node index.js` to start your local API server at `http://localhost:8000`.
+
+|Fetch URL|Method|Notes|
+|---|---|---|
+|`/product`|GET|Get product list (all products)|
+|`/product/<id>`|GET|Get a specific product by its ID|
+|`/product`|POST|Add a new product|
+|`/product/<id>`|PUT|Edit a specific product by its ID|
+|`/product/<id>`|DELETE|Delete a specific product by its ID|
+
+* Example for GET method: `http://localhost:8000/product/8`
 * Using web browser to view data structure at `http://localhost:8000/product`

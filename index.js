@@ -53,14 +53,14 @@ productRouter.post('/', (req, res) => {
     res.set(header.changeDataHeader)
         .json(result);
 });
-productRouter.put('/', (req, res) => {
-    const productId = parseInt(req.body.id) || 0;
+productRouter.put('/:id', (req, res) => {
+    const productId = parseInt(req.params.id) || 0;
     let result = {};
     if (productId > 0) {
         const findItemIndex = productList.findIndex(item => item.id === productId);
         if (findItemIndex !== -1){
             res.status(200); // Updated successfull
-            result = Object.assign({}, {...req.body, status: 'modified'});
+            result = Object.assign({}, {...req.body, id: productId, status: 'edited'});
         } else {
             res.status(400); // Bad request
         }
