@@ -34,6 +34,30 @@ const productList = [
         name: 'Smör',
         price: '43.70',
         inStock: 29
+    },
+    {
+        id: 7,
+        name: 'Smörgåstårta',
+        price: '278.70',
+        inStock: 23
+    },
+    {
+        id: 8,
+        name: 'Lax',
+        price: '125.90',
+        inStock: 208
+    },
+    {
+        id: 9,
+        name: 'Köttbullar',
+        price: '46.90',
+        inStock: 68
+    },
+    {
+        id: 10,
+        name: 'Kanelbullar',
+        price: '6.90',
+        inStock: 57
     }
 ];
 
