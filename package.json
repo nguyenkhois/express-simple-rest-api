@@ -14,8 +14,8 @@
   "author": "Khoi Le",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.4",
-    "express": "^4.16.3"
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
   },
   "repository": {
     "type": "git",
